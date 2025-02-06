@@ -1,7 +1,13 @@
 import { PageTitle } from "@/components/page-title";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Phone } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 export function HomePage() {
@@ -14,29 +20,27 @@ export function HomePage() {
           description="este é um overview das métricas das suas campanhas de disparos"
         />
 
-        <Card>
-          <CardHeader>
-            <CardTitle></CardTitle>
-          </CardHeader>
-        </Card>
+        <div></div>
 
-        <div>
+        <div className="grid gap-5">
           <Input
             type="search"
             placeholder="digite algo..."
             className="w-[250px]"
           />
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>#</TableHead>
-                <TableHead>nome</TableHead>
-                <TableHead>telefone</TableHead>
-                <TableHead>template mensagem</TableHead>
-                <TableHead>Status</TableHead>
-              </TableRow>
-            </TableHeader>
-          </Table>
+          <div className="border rounded-md overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>#</TableHead>
+                  <TableHead>nome</TableHead>
+                  <TableHead>telefone</TableHead>
+                  <TableHead>template mensagem</TableHead>
+                  <TableHead>Status</TableHead>
+                </TableRow>
+              </TableHeader>
+            </Table>
+          </div>
         </div>
       </div>
     </>
