@@ -1,13 +1,6 @@
 import { PageTitle } from "@/components/page-title";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Phone } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 export function HomePage() {
