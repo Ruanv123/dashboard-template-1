@@ -1,6 +1,8 @@
 import { Outlet } from "react-router";
+import { AppBreadcrumb } from "./app-breadcrumb";
 import { AppSidebar } from "./app-sidebar";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "./ui/sidebar";
 import { UserNav } from "./user-nav";
 
@@ -9,9 +11,11 @@ export function PrivateLayout() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="px-2 py-3 border-b flex items-center justify-between">
-          <div>
+        <header className="sticky top-0 px-2 py-3 border-b flex items-center justify-between">
+          <div className="flex items-center gap-2">
             <SidebarTrigger />
+            <Separator orientation="vertical" className="h-4 mr-2" />
+            <AppBreadcrumb />
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm">
