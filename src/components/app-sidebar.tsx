@@ -3,6 +3,7 @@ import {
   HomeIcon,
   LeafIcon,
   LogOutIcon,
+  MessageSquare,
   RepeatIcon,
   SendIcon,
   UserCheck2Icon,
@@ -38,6 +39,11 @@ const links = [
     title: "Contacts",
     href: "/contacts",
     icon: UserCheck2Icon,
+  },
+  {
+    title: "Messages",
+    href: "/messages",
+    icon: MessageSquare,
   },
   {
     title: "Integrations",

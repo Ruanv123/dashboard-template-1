@@ -10,6 +10,7 @@ import { LoginPage } from "./pages/login";
 import { MessagesPage } from "./pages/Messages";
 import { SenderPage } from "./pages/Sender";
 import { SettingsPage } from "./pages/Settings";
+import { AuthProvider } from "./components/auth-context";
 
 const queryClient = new QueryClient();
 
@@ -20,17 +21,22 @@ function App() {
         <HelmetProvider>
           <ThemeProvider defaultTheme="dark" storageKey="app-ui-theme">
             <BrowserRouter>
-              <Routes>
-                <Route path="/login" element={<LoginPage />} />
-                <Route element={<PrivateLayout />}>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/sender" element={<SenderPage />} />
-                  <Route path="/contacts" element={<ContactsPage />} />
-                  <Route path="/integrations" element={<IntegrationsPage />} />
-                  <Route path="/messages" element={<MessagesPage />} />
-                  <Route path="/settings" element={<SettingsPage />} />
-                </Route>
-              </Routes>
+              <AuthProvider>
+                <Routes>
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route element={<PrivateLayout />}>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/sender" element={<SenderPage />} />
+                    <Route path="/contacts" element={<ContactsPage />} />
+                    <Route
+                      path="/integrations"
+                      element={<IntegrationsPage />}
+                    />
+                    <Route path="/messages" element={<MessagesPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                  </Route>
+                </Routes>
+              </AuthProvider>
             </BrowserRouter>
           </ThemeProvider>
         </HelmetProvider>
